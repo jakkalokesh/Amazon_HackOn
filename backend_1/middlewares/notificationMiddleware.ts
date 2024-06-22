@@ -18,7 +18,7 @@ export const checkThresholds = async (req: Request, res: Response, next: NextFun
       }, 0);
       console.log(yearlyExpenditure)
       if (yearlyExpenditure + finalPrice >= customer.thresholdLimit) {
-        const recipientEmail = 'lokeshjakka03@gmail.com';
+        const recipientEmail = process.env.EMAIL_TO;
         const subject = 'Notification: Approaching Yearly Spending Limit';
         const emailContent = `
           Dear ${customer.name},
