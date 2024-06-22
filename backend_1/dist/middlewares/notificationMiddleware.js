@@ -28,17 +28,6 @@ const checkThresholds = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
                 }
                 return sum;
             }, 0);
-            // Setup email data
-            const emailOptions = {
-                email: 'lokeshjakka03@gmail.com', // The recipient's email address
-                subject: 'Budget Alert',
-                message: '',
-            };
-            // Send the email
-            (0, email_1.sendEmail)(emailOptions).catch(error => {
-                console.error('Error sending initial email:', error);
-            });
-            console.log(yearlyExpenditure);
             if (yearlyExpenditure + finalPrice >= customer.thresholdLimit) {
                 const recipientEmail = 'lokeshjakka03@gmail.com';
                 const subject = 'Notification: Approaching Yearly Spending Limit';
