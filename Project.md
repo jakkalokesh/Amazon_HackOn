@@ -17,16 +17,16 @@
 
 ## Screenshots of Our Project
 
-1. ### Home
+### 1. Home
 ![alt text](<screenshots/Screenshot 2024-06-22 at 5.52.50 PM.png>)
 
-2. ### AI Chatbot
+### 2. AI Chatbot
 ![alt text](<screenshots/Screenshot 2024-06-22 at 5.56.55 PM.png>)
 
-3. ### Threshold Limit
+### 3. Threshold Limit
 ![alt text](<screenshots/Screenshot 2024-06-22 at 5.57.57 PM.png>)
 
-4. ### Spendings vs Savings
+### 4. Spendings vs Savings
 ![alt text](<screenshots/Screenshot 2024-06-22 at 6.00.44 PM.png>)
 
 ![alt text](<screenshots/Screenshot 2024-06-22 at 6.01.15 PM.png>)
@@ -35,7 +35,7 @@
 
 ![alt text](<screenshots/Screenshot 2024-06-22 at 6.02.17 PM.png>)
 
-5. ### Recommendation system
+### 5. Recommendation system
 ![alt text](<screenshots/Screenshot 2024-06-22 at 5.59.18 PM.png>)
 
 
