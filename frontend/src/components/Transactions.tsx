@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../config/axios';
 
 interface Transaction {
   _id: string;
@@ -33,8 +33,8 @@ const Transactions: React.FC = () => {
   const fetchAllTransactions = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `http://localhost:3000/api/customers/6673d641b5ce57594b4523c2/transactions`
+      const response = await axiosInstance.get(
+        `/customers/6673d641b5ce57594b4523c2/transactions`
       );
       const sortedTransactions = response.data.sort((a: Transaction, b: Transaction) => {
         // Sort by createdAt in descending order (latest first)
