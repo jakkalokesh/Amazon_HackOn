@@ -61,7 +61,7 @@ const Recommendation: React.FC = () => {
   return (
     <>
     <Appbar/>
-    <h1 className="text-2xl mt-3 ml-4 font-bold mb-4">Recommendation System</h1>
+    <h1 className="text-2xl mt-3 ml-4 font-bold mb-4 bg-emerald-300 w-fit p-2 rounded-xl">Recommendation System</h1>
     <div className="recommendation p-4 bg-gray-100 rounded-lg border-2 border-green-200 shadow-md flex flex-col max-h-screen justify-center">
       <div className="messages-container p-4 bg-white rounded-md shadow-inner border-2 border-green-200 overflow-y-scroll h-96">
         {messages.map((msg, index) => (
