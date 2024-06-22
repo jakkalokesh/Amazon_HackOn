@@ -92,106 +92,99 @@ const CustomerDetails = () => {
 
         return (
             <div className="flex justify-center w-full">
-                <div className="flex flex-col md:flex-row justify-around items-center  p-8 pl-10 w-full ">
-                    <div className="flex-shrink-0">
-                        <img className="h-48 w-48 object-cover rounded-full shadow-md" src={customer_img} alt="Customer Avatar" />
+            <div className="flex flex-col md:flex-row justify-around items-center p-8 w-full">
+                <div className="flex-shrink-0 mb-4 md:mb-0">
+                    <img className="h-48 w-48 object-cover rounded-full shadow-md" src={customer_img} alt="Customer Avatar" />
+                </div>
+                <div className="p-4 md:p-8 w-full md:w-2/3">
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-4">Customer Details</h2>
+                    <div className="mb-4 flex flex-col md:flex-row">
+                        <span className="text-gray-600 font-semibold w-full md:w-1/3">Name:</span>
+                        <span className="text-indigo-500 font-bold w-full md:w-2/3">{customer.name}</span>
                     </div>
-                    <div className="p-8 pt-0 pl-20 w-full md:w-2/3">
-                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Customer Details</h2>
-                        <div className="mb-4 flex">
-                            <span className="text-gray-600 font-semibold w-1/3">Name:</span>
-                            <span className="text-indigo-500 font-bold w-2/3">{customer.name}</span>
-                        </div>
-                        <div className="mb-4 flex">
-                            <span className="text-gray-600 font-semibold w-1/3">Email:</span>
-                            <span className="text-gray-500 w-2/3">{customer.email}</span>
-                        </div>
-                        <div className="mb-4 flex">
-                            <span className="text-gray-600 font-semibold w-1/3">Phone:</span>
-                            <span className="text-gray-500 w-2/3">{customer.phone}</span>
-                        </div>
-                        <div className="mb-4 flex">
-                            <span className="text-gray-600 font-semibold w-1/3">Address:</span>
-                            <span className="text-gray-500 w-2/3">{customer.address}</span>
-                        </div>
-                        <div className="mb-4 flex">
-                            <span className="text-gray-600 font-semibold w-1/3">Joined Us:</span>
-                            <span className="text-gray-500 w-2/3">{new Date(customer.createdAt).toLocaleDateString()}</span>
-                        </div>
-                        <br></br>
-                        {purchaseLimit && (
-                            <>
-                                <div className='flex flex-row'>
+                    <div className="mb-4 flex flex-col md:flex-row">
+                        <span className="text-gray-600 font-semibold w-full md:w-1/3">Email:</span>
+                        <span className="text-gray-500 w-full md:w-2/3">{customer.email}</span>
+                    </div>
+                    <div className="mb-4 flex flex-col md:flex-row">
+                        <span className="text-gray-600 font-semibold w-full md:w-1/3">Phone:</span>
+                        <span className="text-gray-500 w-full md:w-2/3">{customer.phone}</span>
+                    </div>
+                    <div className="mb-4 flex flex-col md:flex-row">
+                        <span className="text-gray-600 font-semibold w-full md:w-1/3">Address:</span>
+                        <span className="text-gray-500 w-full md:w-2/3">{customer.address}</span>
+                    </div>
+                    <div className="mb-4 flex flex-col md:flex-row">
+                        <span className="text-gray-600 font-semibold w-full md:w-1/3">Joined Us:</span>
+                        <span className="text-gray-500 w-full md:w-2/3">{new Date(customer.createdAt).toLocaleDateString()}</span>
+                    </div>
+                    <br />
+                    {purchaseLimit && (
+                        <>
+                            <div className="flex flex-col md:flex-row md:items-center">
                                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Set a limit</h2>
                                 {!editMode && (
-                                    <div className="ml-10">
+                                    <div className="mt-2 md:mt-0 md:ml-10">
                                         <button onClick={() => setEditMode(true)} className="bg-gray-500 text-white px-4 py-2 rounded shadow">
                                             Edit
                                         </button>
                                     </div>
                                 )}
-                                </div>
-                                <div className="mb-4 flex">
-                                    <span className="text-gray-600 font-semibold w-1/3">Spending Limit:</span>
-                                    {editMode ? (
-                                        <input
-                                            type="text"
-                                            name="spendingLimit"
-                                            value={editedPurchaseLimit?.spendingLimit || ''}
-                                            onChange={handleInputChange}
-                                            className="text-gray-500 w-2/3 border rounded px-2"
-                                        />
-                                    ) : (
-                                        <span className="text-gray-500 w-2/3">&#8377;{purchaseLimit.spendingLimit.toLocaleString()}</span>
-                                    )}
-                                </div>
-                                <div className="mb-4 flex">
-                                    <span className="text-gray-600 font-semibold w-1/3">Threshold Limit:</span>
-                                    {editMode ? (
-                                        <input
-                                            type="text"
-                                            name="thresholdLimit"
-                                            value={editedPurchaseLimit?.thresholdLimit || ''}
-                                            onChange={handleInputChange}
-                                            className="text-gray-500 w-2/3 border rounded px-2"
-                                        />
-                                    ) : (
-                                        <span className="text-gray-500 w-2/3">&#8377;{purchaseLimit.thresholdLimit.toLocaleString()}</span>
-                                    )}
-                                </div>
-                                <div className="mb-4 flex">
-                                    <span className="text-gray-600 font-semibold w-1/3">Spending Notifications:</span>
-                                    {editMode ? (
-                                        <input
-                                            type="checkbox"
-                                            name="spendingNotifications"
-                                            checked={editedPurchaseLimit?.spendingNotifications || false}
-                                            onChange={handleInputChange}
-                                            className="w-2/3"
-                                        />
-                                    ) : (
-                                        <span className="text-gray-500 w-2/3">{purchaseLimit.spendingNotifications ? 'Enabled' : 'Disabled'}</span>
-                                    )}
-                                </div>
-                                {editMode && (
-                                    <div className="flex justify-end mt-4">
-                                        <button onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded shadow">
-                                            Save
-                                        </button>
-                                    </div>
+                            </div>
+                            <div className="mb-4 flex flex-col md:flex-row">
+                                <span className="text-gray-600 font-semibold w-full md:w-1/3">Spending Limit:</span>
+                                {editMode ? (
+                                    <input
+                                        type="text"
+                                        name="spendingLimit"
+                                        value={editedPurchaseLimit?.spendingLimit || ''}
+                                        onChange={handleInputChange}
+                                        className="text-gray-500 w-full md:w-2/3 border rounded px-2"
+                                    />
+                                ) : (
+                                    <span className="text-gray-500 w-full md:w-2/3">&#8377;{purchaseLimit.spendingLimit.toLocaleString()}</span>
                                 )}
-                            </>
-                        )}
-                    </div>
+                            </div>
+                            <div className="mb-4 flex flex-col md:flex-row">
+                                <span className="text-gray-600 font-semibold w-full md:w-1/3">Threshold Limit:</span>
+                                {editMode ? (
+                                    <input
+                                        type="text"
+                                        name="thresholdLimit"
+                                        value={editedPurchaseLimit?.thresholdLimit || ''}
+                                        onChange={handleInputChange}
+                                        className="text-gray-500 w-full md:w-2/3 border rounded px-2"
+                                    />
+                                ) : (
+                                    <span className="text-gray-500 w-full md:w-2/3">&#8377;{purchaseLimit.thresholdLimit.toLocaleString()}</span>
+                                )}
+                            </div>
+                            <div className="mb-4 flex flex-col md:flex-row">
+                                <span className="text-gray-600 font-semibold w-full md:w-1/3">Spending Notifications:</span>
+                                {editMode ? (
+                                    <input
+                                        type="checkbox"
+                                        name="spendingNotifications"
+                                        checked={editedPurchaseLimit?.spendingNotifications || false}
+                                        onChange={handleInputChange}
+                                        className="w-full md:w-2/3"
+                                    />
+                                ) : (
+                                    <span className="text-gray-500 w-full md:w-2/3">{purchaseLimit.spendingNotifications ? 'Enabled' : 'Disabled'}</span>
+                                )}
+                            </div>
+                            {editMode && (
+                                <div className="flex justify-end mt-4">
+                                    <button onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded shadow">
+                                        Save
+                                    </button>
+                                </div>
+                            )}
+                        </>
+                    )}
                 </div>
-                {/* {!editMode && (
-                    <div className="mt-4">
-                        <button onClick={() => setEditMode(true)} className="bg-gray-500 text-white px-4 py-2 rounded shadow">
-                            Edit
-                        </button>
-                    </div>
-                )} */}
             </div>
+        </div>
         );
     };
 
