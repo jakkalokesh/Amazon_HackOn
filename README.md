@@ -33,9 +33,11 @@ This project aims to revolutionize the payment landscape by implementing a suite
     PASS = APP_PASSWORD
     PORT = 3000
     MONGODB_URI = YOUR_MONGOBD 
+    EMAIL_TO = RECEIVER_EMAIL
 ```
 - In the above replace `YOUR_EMAIL` with your email and replace `PASS` with your google app password.
 - And if you are interested to use your own database you can add the link in place of `YOUR_MONGOBD`. If not it works using our data.
+- Also replace `RECEIVER_EMAIL` with the receiver email.
 4. #### Setting up Backend (Part-2)
 - Navigate to the `backend_2` directory in your terminal.
 - Create a `venv` file using the below command.
@@ -56,6 +58,9 @@ This project aims to revolutionize the payment landscape by implementing a suite
     python -m spacy download en_core_web_sm
 ```
 - Open `chatbot.py` file (you can find it here - backend_2/chatbot.py) and replace `YOUR_API_KEY` with your google Gemini API key.
+```sh
+    genai.configure(api_key='YOUR_API_KEY')
+```
     
 
 ### Deploy:
@@ -97,6 +102,7 @@ This project aims to revolutionize the payment landscape by implementing a suite
 
 ## Tools and Technologies used
 
+- GenAI
 - MongoDB
 - Express
 - React
@@ -139,4 +145,3 @@ This project aims to revolutionize the payment landscape by implementing a suite
     - https://github.com/jakkalokesh/AI_Chatbot_Amazon_HackOn
     - https://github.com/therahulkumar28/Hackon
     - https://github.com/yoshitha10/Recommendation_Engine_Amazon_HackOn
-    
