@@ -130,3 +130,13 @@ This project aims to revolutionize the payment landscape by implementing a suite
 
 ### 5. Recommendation system
 ![alt text](<screenshots/Screenshot 2024-06-22 at 5.59.18 PM.png>)
+
+
+
+# Contributors
+
+- Our team members contribuition to this project is
+    - https://github.com/jakkalokesh/AI_Chatbot_Amazon_HackOn
+    - https://github.com/therahulkumar28/Hackon
+    - https://github.com/yoshitha10/Recommendation_Engine_Amazon_HackOn
+    
