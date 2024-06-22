@@ -28,6 +28,7 @@ const checkThresholds = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
                 }
                 return sum;
             }, 0);
+            console.log(yearlyExpenditure);
             if (yearlyExpenditure + finalPrice >= customer.thresholdLimit) {
                 const recipientEmail = 'lokeshjakka03@gmail.com';
                 const subject = 'Notification: Approaching Yearly Spending Limit';

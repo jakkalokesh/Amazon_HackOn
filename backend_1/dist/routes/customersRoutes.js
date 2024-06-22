@@ -23,9 +23,9 @@ router.get('/customers/:customerId/savings', CustomersController_1.getAllSavings
 // Fetch all expenditures for a customer
 router.get('/customers/:customerId/expenditures', CustomersController_1.getAllExpenditure);
 // setPurchaseLimit
-router.put('/customers/:customerId/purchase-limit', CustomersController_1.setPurchaseLimit);
+router.put('/customers/:customerId/purchase-limit', notificationMiddleware_1.checkThresholds, CustomersController_1.setPurchaseLimit);
 //getPurchaseLimit 
-router.get('/customers/:customerId/purchase-limit', notificationMiddleware_1.checkThresholds, CustomersController_1.getPurchaseLimit);
+router.get('/customers/:customerId/purchase-limit', CustomersController_1.getPurchaseLimit);
 //getSpendingbyCategory by id 
 router.get('/customers/:id/spending-by-category', CustomersController_1.getSpendingByCategory);
 exports.default = router;
