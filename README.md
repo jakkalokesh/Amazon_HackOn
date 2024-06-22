@@ -27,7 +27,7 @@ This project aims to revolutionize the payment landscape by implementing a suite
 ```sh
     npm install
 ```
-- Now create a .env file in this directory and add the below data.
+- Now create a `.env` file in this directory and add the below data.
 ```sh
     EMAIL = YOUR_EMAIL
     PASS = APP_PASSWORD
@@ -38,7 +38,7 @@ This project aims to revolutionize the payment landscape by implementing a suite
 - And if you are interested to use your own database you can add the link in place of `YOUR_MONGOBD`. If not it works using our data.
 4. #### Setting up Backend (Part-2)
 - Navigate to the `backend_2` directory in your terminal.
-- Create a venv file using the below command.
+- Create a `venv` file using the below command.
 ```sh
     python -m venv venv
 ```
