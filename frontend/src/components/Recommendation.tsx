@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Appbar from './Appbar';
 
 const Recommendation: React.FC = () => {
   const [productId, setProductId] = useState('');
@@ -58,8 +59,11 @@ const Recommendation: React.FC = () => {
   }, [messages]);
 
   return (
-    <div className="recommendation p-4 bg-gray-100 rounded-lg shadow-md">
-      <div className="messages-container p-4 bg-white rounded-md shadow-inner overflow-y-scroll h-96">
+    <>
+    <Appbar/>
+    <h1 className="text-2xl mt-3 ml-4 font-bold mb-4">Recommendation System</h1>
+    <div className="recommendation p-4 bg-gray-100 rounded-lg border-2 border-green-200 shadow-md flex flex-col max-h-screen justify-center">
+      <div className="messages-container p-4 bg-white rounded-md shadow-inner border-2 border-green-200 overflow-y-scroll h-96">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender === 'user' ? 'text-right' : 'text-left'} mb-2`}>
             <div 
@@ -76,7 +80,7 @@ const Recommendation: React.FC = () => {
           value={productId}
           onChange={(e) => setProductId(e.target.value)}
           onKeyPress={handleKeyPress}
-          className="flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          className="flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-500"
           placeholder="Enter Product ID"
         />
         <button 
@@ -88,6 +92,7 @@ const Recommendation: React.FC = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

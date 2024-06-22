@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Appbar from './Appbar';
 
 const Chatbot: React.FC = () => {
   const [input, setInput] = useState('');
@@ -29,8 +30,11 @@ const Chatbot: React.FC = () => {
   }, [messages]);
 
   return (
-    <div className="chatbot p-4 bg-gray-100 rounded-lg shadow-md">
-      <div className="messages-container p-4 bg-white rounded-md shadow-inner overflow-y-scroll h-96">
+    <>
+    <Appbar/>
+    <h1 className="text-2xl mt-3 ml-4 font-bold mb-4">AI Chatbot</h1>
+    <div className="chatbot p-4 bg-gray-100 rounded-lg border-2 border-blue-200 shadow-md flex flex-col max-h-screen justify-center">
+      <div className="messages-container p-4 bg-white rounded-md shadow-inner border-2 border-blue-200 overflow-y-scroll h-96">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender === 'user' ? 'text-right' : 'text-left'} mb-2`}>
             <div className={`inline-block p-2 rounded-md ${msg.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black'}`}>
@@ -53,6 +57,7 @@ const Chatbot: React.FC = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

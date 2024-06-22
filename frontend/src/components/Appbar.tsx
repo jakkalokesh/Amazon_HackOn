@@ -70,7 +70,7 @@ const Appbar = () => {
               </li>
               <li className="mb-2">
                 <Link to="/recommendation" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
-                  AI Recommendation
+                  Recommendation System
                 </Link>
               </li>
               <li className="mb-2">
