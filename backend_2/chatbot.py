@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hu
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # Configure Generative AI API
-genai.configure(api_key='')
+genai.configure(api_key='YOUR_API_KEY')
 model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 # Placeholder for models
