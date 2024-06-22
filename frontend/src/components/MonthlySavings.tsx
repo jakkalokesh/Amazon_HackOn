@@ -115,23 +115,27 @@ const TransactionGraph: React.FC = () => {
     <div className="p-4 border-2 border-green-400 mt-2" style={{ overflowX: 'auto' }}>
       <div className="flex flex-wrap font-bold justify-center items-center text-2xl mb-5">Check your Spending on Particular Product in Graph Format</div>
       <form onSubmit={handleSubmit} className="mb-4">
-        <div className="flex items-center justify-center">
-          <label htmlFor="month" className="mr-2">Month:</label>
-          <select id="month" value={selectedMonth} onChange={handleMonthChange} className="p-2 border rounded-lg mr-4">
+      <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+        <div className="flex flex-col items-center md:flex-row md:space-x-2">
+          <label htmlFor="month" className="mr-2 md:mr-0">Month:</label>
+          <select id="month" value={selectedMonth} onChange={handleMonthChange} className="p-2 border rounded-lg mr-4 md:mr-0">
             <option value="">Select Month</option>
             {monthOptions.map(month => (
               <option key={month} value={month}>{month}</option>
             ))}
           </select>
-          <label htmlFor="year" className="mr-2">Year:</label>
-          <select id="year" value={selectedYear} onChange={handleYearChange} className="p-2 border rounded-lg mr-4">
+        </div>
+        <div className="flex flex-col items-center md:flex-row md:space-x-2">
+          <label htmlFor="year" className="mr-2 md:mr-0">Year:</label>
+          <select id="year" value={selectedYear} onChange={handleYearChange} className="p-2 border rounded-lg mr-4 md:mr-0">
             <option value="">Select Year</option>
             {yearOptions.map(year => (
               <option key={year} value={year}>{year}</option>
             ))}
           </select>
-          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg">Fetch Transactions</button>
         </div>
+        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg">Fetch Transactions</button>
+      </div>
       </form>
       <div className="flex items-center justify-center mb-4">
         <label className="mr-2">Show prices in:</label>
