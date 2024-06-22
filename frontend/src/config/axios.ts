@@ -2,7 +2,8 @@ import axios, { AxiosInstance } from 'axios';
 // ** Config
 
 // Define the base URL for API request
-const baseURL = 'http://localhost:3000'
+// const baseURL = 'http://localhost:3000'
+const baseURL = 'https://hackon-ycff.onrender.com'
 
 // Create an instance of Axios with default configuration
 const axiosInstance: AxiosInstance = axios.create({
