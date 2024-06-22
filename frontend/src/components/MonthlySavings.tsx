@@ -111,9 +111,11 @@ const TransactionGraph: React.FC = () => {
   };
 
   return (
-    <div className="p-4" style={{ overflowX: 'auto' }}>
+    <div className='p-3'>
+    <div className="p-4 border-2 border-green-400 mt-2" style={{ overflowX: 'auto' }}>
+      <div className="flex flex-wrap font-bold justify-center items-center text-2xl mb-5">Check your Spending on Particular Product in Graph Format</div>
       <form onSubmit={handleSubmit} className="mb-4">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
           <label htmlFor="month" className="mr-2">Month:</label>
           <select id="month" value={selectedMonth} onChange={handleMonthChange} className="p-2 border rounded-lg mr-4">
             <option value="">Select Month</option>
@@ -131,7 +133,7 @@ const TransactionGraph: React.FC = () => {
           <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg">Fetch Transactions</button>
         </div>
       </form>
-      <div className="flex items-center mb-4">
+      <div className="flex items-center justify-center mb-4">
         <label className="mr-2">Show prices in:</label>
         <select value={selectedCurrency} onChange={handleCurrencyChange} className="p-2 border rounded-lg mr-2">
           <option value="INR">INR</option>
@@ -141,7 +143,7 @@ const TransactionGraph: React.FC = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div style={{ overflowY: 'auto', maxHeight: '80vh' }}>
+        <div className='flex items-center justify-center' style={{ overflowY: 'auto', maxHeight: '80vh' }}>
           {transactions.length === 0 ? (
             <p>No transactions found for the selected month and year.</p>
           ) : (
@@ -187,6 +189,7 @@ const TransactionGraph: React.FC = () => {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 };

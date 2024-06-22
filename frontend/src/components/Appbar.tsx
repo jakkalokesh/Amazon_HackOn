@@ -69,23 +69,23 @@ const Appbar = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="/recommendation" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
-                  Recommendation System
-                </Link>
-              </li>
-              <li className="mb-2">
                 <Link to="/ai-chatbot" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
                   AI Chatbot
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to="/payment-history" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
-                  View Spending on Product or Category
+                  Threshold Limit
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to="/budget-saving" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
-                  View Monthly Expenditure
+                  Spending vs Saving
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/recommendation" className="block text-left w-full px-4 py-2 text-gray-800 hover:bg-gray-300">
+                  Recommendation System
                 </Link>
               </li>
             </ul>

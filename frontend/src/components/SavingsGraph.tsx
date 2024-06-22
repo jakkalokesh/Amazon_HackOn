@@ -127,8 +127,9 @@ const SavingsGraph: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-4">
-      <h2 className="text-xl font-bold mb-4">Monthly Savings and Expenditure</h2>
+    <div className='p-3 mt-1'>
+    <div className="flex flex-col items-center justify-center w-full h-full p-4 border-2 border-orange-400">
+      <h2 className="text-2xl font-bold mb-4">Monthly Savings and Expenditure</h2>
       <div className="flex mb-4">
         <div className="mr-4">
           <label htmlFor="yearSelect" className="mr-2">Select Year:</label>
@@ -161,6 +162,7 @@ const SavingsGraph: React.FC = () => {
       <div className="w-full h-96">
         <Bar data={data} options={options} />
       </div>
+    </div>
     </div>
   );
 };

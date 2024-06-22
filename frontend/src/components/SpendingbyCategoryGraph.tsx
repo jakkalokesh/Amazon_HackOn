@@ -64,8 +64,9 @@ const SpendingByCategory: React.FC = () => {
   }] : [];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-4">
-      {/* {<h1 className="text-2xl mb-4">Spending by Category</h1>} */}
+    <div className='p-3'>
+    <div className="flex flex-col items-center justify-center w-full h-full p-4 border-2 border-blue-400 mt-2">
+      <div className="flex flex-wrap font-bold justify-center items-center text-2xl mt-5 mb-5">Check your Spending by Category</div>
       <div className="mb-4">
         <select onChange={handleCategoryChange} className="p-2 border border-gray-300 mr-4">
           <option value="">Select a category</option>
@@ -92,6 +93,7 @@ const SpendingByCategory: React.FC = () => {
           </BarChart>
         </ResponsiveContainer>
       )}
+    </div>
     </div>
   );
 };

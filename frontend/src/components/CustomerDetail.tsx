@@ -92,7 +92,7 @@ const CustomerDetails = () => {
 
         return (
             <div className="flex justify-center w-full">
-                <div className="flex flex-col md:flex-row justify-around items-center  p-8 pl-20 w-full ">
+                <div className="flex flex-col md:flex-row justify-around items-center  p-8 pl-10 w-full ">
                     <div className="flex-shrink-0">
                         <img className="h-48 w-48 object-cover rounded-full shadow-md" src={customer_img} alt="Customer Avatar" />
                     </div>

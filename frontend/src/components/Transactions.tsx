@@ -69,7 +69,8 @@ const Transactions: React.FC = () => {
   };
 
   return (
-    <div className=" relative  p-4">
+    <div className='p-3'>
+    <div className=" relative  p-4 border-2 border-purple-400 mt-2">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Transaction History</h2>
         <select value={currency} onChange={handleCurrencyChange} className="p-2 border rounded-lg">
@@ -108,6 +109,7 @@ const Transactions: React.FC = () => {
       {!loading && allTransactions.length > 0 && currentTransactions.length === 0 && (
         <p>No more transactions found.</p>
       )}
+    </div>
     </div>
   );
 };

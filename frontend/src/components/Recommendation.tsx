@@ -79,7 +79,7 @@ const Recommendation: React.FC = () => {
           type="text"
           value={productId}
           onChange={(e) => setProductId(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyPress}
           className="flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-500"
           placeholder="Enter Product ID"
         />
