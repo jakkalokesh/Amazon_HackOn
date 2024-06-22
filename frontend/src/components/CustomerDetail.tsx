@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../config/axios';
+import customer_img from '../assets/customer.png'
 
 interface Customer {
     name: string;
@@ -91,12 +92,12 @@ const CustomerDetails = () => {
 
         return (
             <div className="flex justify-center w-full">
-                <div className="flex flex-col md:flex-row justify-around items-center  p-8  w-full ">
+                <div className="flex flex-col md:flex-row justify-around items-center  p-8 pl-20 w-full ">
                     <div className="flex-shrink-0">
-                        <img className="h-48 w-48 object-cover rounded-full shadow-md" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.DLyBOY6GEBZasl1qsjqZ3QHaG7%26pid%3DApi&f=1&ipt=7fd211950cd13b5cf61edfa9cc3fcd4fe45daabd7d8279ee30ea18a72b2974cc&ipo=images" alt="Customer Avatar" />
+                        <img className="h-48 w-48 object-cover rounded-full shadow-md" src={customer_img} alt="Customer Avatar" />
                     </div>
-                    <div className="p-8 w-full md:w-2/3">
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Customer Details</h2>
+                    <div className="p-8 pt-0 pl-20 w-full md:w-2/3">
+                        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Customer Details</h2>
                         <div className="mb-4 flex">
                             <span className="text-gray-600 font-semibold w-1/3">Name:</span>
                             <span className="text-indigo-500 font-bold w-2/3">{customer.name}</span>
@@ -117,8 +118,19 @@ const CustomerDetails = () => {
                             <span className="text-gray-600 font-semibold w-1/3">Joined Us:</span>
                             <span className="text-gray-500 w-2/3">{new Date(customer.createdAt).toLocaleDateString()}</span>
                         </div>
+                        <br></br>
                         {purchaseLimit && (
                             <>
+                                <div className='flex flex-row'>
+                                <h2 className="text-2xl font-semibold text-gray-800 mb-4">Set a limit</h2>
+                                {!editMode && (
+                                    <div className="ml-10">
+                                        <button onClick={() => setEditMode(true)} className="bg-gray-500 text-white px-4 py-2 rounded shadow">
+                                            Edit
+                                        </button>
+                                    </div>
+                                )}
+                                </div>
                                 <div className="mb-4 flex">
                                     <span className="text-gray-600 font-semibold w-1/3">Spending Limit:</span>
                                     {editMode ? (
@@ -172,13 +184,13 @@ const CustomerDetails = () => {
                         )}
                     </div>
                 </div>
-                {!editMode && (
+                {/* {!editMode && (
                     <div className="mt-4">
                         <button onClick={() => setEditMode(true)} className="bg-gray-500 text-white px-4 py-2 rounded shadow">
                             Edit
                         </button>
                     </div>
-                )}
+                )} */}
             </div>
         );
     };
