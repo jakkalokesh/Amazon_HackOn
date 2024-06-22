@@ -9,11 +9,11 @@ This project aims to revolutionize the payment landscape by implementing a suite
 ### Setup:
 
 1. #### Cloning the project
-    - Clone the project using the below command.
+- Clone the project using the below command.
 
-    ```sh
-    git clone https://github.com/jakkalokesh/Amazon_HackOn.git
-    ```
+```sh
+git clone https://github.com/jakkalokesh/Amazon_HackOn.git
+```
 2. #### Setting up Frontend
     - Navigate to the `frontend` directory in your terminal.
     - Enter the following command.
