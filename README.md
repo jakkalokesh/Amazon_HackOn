@@ -12,56 +12,50 @@ This project aims to revolutionize the payment landscape by implementing a suite
 - Clone the project using the below command.
 
 ```sh
-git clone https://github.com/jakkalokesh/Amazon_HackOn.git
+    git clone https://github.com/jakkalokesh/Amazon_HackOn.git
 ```
 2. #### Setting up Frontend
-    - Navigate to the `frontend` directory in your terminal.
-    - Enter the following command.
+- Navigate to the `frontend` directory in your terminal.
+- Enter the following command.
 
-    ```sh
+```sh
     npm install
-    ```
+```
 3. #### Setting up Backend (Part-1)
-    - Navigate to the `backend_1` directory in your terminal.
-    - Enter the following command.
-
-    ```sh
+- Navigate to the `backend_1` directory in your terminal.
+- Enter the following command.
+```sh
     npm install
-    ```
-    - Now create a .env file in this directory and add the below data.
-
-    ```sh
+```
+- Now create a .env file in this directory and add the below data.
+```sh
     EMAIL = YOUR_EMAIL
     PASS = APP_PASSWORD
     PORT = 3000
     MONGODB_URI = YOUR_MONGOBD 
-    ```
-    - In the above replace `YOUR_EMAIL` with your email and replace `PASS` with your google app password.
-    - And if you are interested to use your own database you can add the link in place of `YOUR_MONGOBD`. If not it works using our data.
+```
+- In the above replace `YOUR_EMAIL` with your email and replace `PASS` with your google app password.
+- And if you are interested to use your own database you can add the link in place of `YOUR_MONGOBD`. If not it works using our data.
 4. #### Setting up Backend (Part-2)
-    - Navigate to the `backend_2` directory in your terminal.
-    - Create a venv file using the below command.
-
-    ```sh
+- Navigate to the `backend_2` directory in your terminal.
+- Create a venv file using the below command.
+```sh
     python -m venv venv
-    ```
-    - Activate venv using the below command.
-
-    ```sh
+```
+- Activate venv using the below command.
+```sh
     source venv/bin/activate  # for mac or linux
     <venv_path>/bin/activate  # for windows
-    ```
-    - Now to install required python packages use the below command.
-
-    ```sh
+```
+- Now to install required python packages use the below command.
+```sh
     pip install -r requirements.txt
-    ```
-    - Next use the below command to install en_core_web_sm.
-
-    ```sh
+```
+- Next use the below command to install en_core_web_sm.
+```sh
     python -m spacy download en_core_web_sm
-    ```
-    - Open `chatbot.py` file (you can find it here - backend_2/chatbot.py) and replace `YOUR_API_KEY` with your google Gemini API key.
+```
+- Open `chatbot.py` file (you can find it here - backend_2/chatbot.py) and replace `YOUR_API_KEY` with your google Gemini API key.
     
 
 ### Deploy:
