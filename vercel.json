@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "backend_1/api/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "backend_2/chatbot.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "backend_2/recommendation.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/backend_1/(.*)",
+      "dest": "backend_1/api/main.py"
+    },
+    {
+      "src": "/api/chatbot/(.*)",
+      "dest": "backend_2/chatbot.py"
+    },
+    {
+      "src": "/api/recommendation/(.*)",
+      "dest": "backend_2/recommendation.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ]
+}
