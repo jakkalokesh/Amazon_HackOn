@@ -12,7 +12,7 @@
   ],
   "routes": [
     {
-      "src": "/api/backend_2/(.*)",
+      "src": "backend_2/(.*)",
       "dest": "backend_2/main.py"
     },
     {
